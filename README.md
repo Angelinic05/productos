@@ -9,7 +9,8 @@ USE productos
 
 **DER**
 
-![image](C:\Users\57322\OneDrive\Documentos\Campuslands\BD\Taller3\DER_Taller3.png)
+
+![image](DER_productos.png)
 
 **Creación de las tablas**
 
@@ -101,7 +102,7 @@ CREATE TABLE empleado(
 	codigo_oficina INT(10) NOT NULL,
 	jefe INT(10),
 	email VARCHAR(100) NOT NULL,
-	CONSTRAINT FK_empleadoficina FOREIGN KEY (codigo_oficina) REFERENCES oficina(codigo),	
+	CONSTRAINT FK_empleadoficina FOREIGN KEY (codigo_oficina) REFERENCES oficina(codigo),
 	CONSTRAINT FK_empleadojefe FOREIGN KEY (jefe) REFERENCES empleado(cedula));
 
 	
