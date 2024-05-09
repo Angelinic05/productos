@@ -505,7 +505,7 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
   
 
 4. **Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la**
-  **empresa.**
+    **empresa.**
 
   ```sql
   SELECT empleado.puesto, empleado.nombre, empleado.apellido1, empleado.apellido2, empleado.email
@@ -516,7 +516,7 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
   
 
 5. **Devuelve un listado con el nombre, apellidos y puesto de aquellos**
-  **empleados que no sean representantes de ventas.**
+    **empleados que no sean representantes de ventas.**
 
   ```sql
   SELECT nombre, apellido1, apellido2, puesto
@@ -564,7 +564,7 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
    
 
 7. **Devuelve un listado con los distintos estados por los que puede pasar un**
-  **pedido.**
+    **pedido.**
 
   ```sql
   SELECT DISTINCT estado
@@ -584,9 +584,9 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
   
 
 8. **Devuelve un listado con el código de cliente de aquellos clientes que**
-  **realizaron algún pago en 2008. Tenga en cuenta que deberá eliminar**
-  **aquellos códigos de cliente que aparezcan repetidos. Resuelva la consulta:**
-  **• Utilizando la función YEAR de MySQL.**
+    **realizaron algún pago en 2008. Tenga en cuenta que deberá eliminar**
+    **aquellos códigos de cliente que aparezcan repetidos. Resuelva la consulta:**
+    **• Utilizando la función YEAR de MySQL.**
 
   ```sql
   SELECT DISTINCT cedula_cliente
@@ -634,7 +634,7 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
   
 
 9. **Devuelve un listado con el código de pedido, código de cliente, fecha**
-  **esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.**
+    **esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.**
 
   ```sql
   SELECT codigo, cedula_cliente, fecha_esperada, fecha_entrega
@@ -986,7 +986,7 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
 Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NATURAL LEFT JOIN y NATURAL RIGHT JOIN.
 
 1. **Devuelve un listado que muestre solamente los clientes que no han**
-  **realizado ningún pago.**
+    **realizado ningún pago.**
 
   ```sql
   SELECT cliente.nombre
@@ -998,7 +998,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   
 
 2. **Devuelve un listado que muestre solamente los clientes que no han**
-  **realizado ningún pedido.**
+    **realizado ningún pedido.**
 
   ```sql
   SELECT cliente.nombre
@@ -1090,7 +1090,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   
 
 8. **Devuelve un listado de los productos que nunca han aparecido en un**
-  **pedido.**
+    **pedido.**
 
   ```sql
   SELECT producto.nombre
@@ -1103,7 +1103,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   
 
 9. **Devuelve un listado de los productos que nunca han aparecido en un**
-  **pedido. El resultado debe mostrar el nombre, la descripción y la imagen del producto.**
+    **pedido. El resultado debe mostrar el nombre, la descripción y la imagen del producto.**
 
   ```sql
   SELECT producto.nombre, producto.descripcion, gama_producto.imagen
@@ -1222,7 +1222,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
    +-----------------+
    | pago_medio_2009 |
    +-----------------+
-   |  	733.333333 |
+   |  	733.333333    |
    +-----------------+
    
    ```
@@ -1230,7 +1230,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
    
 
 4. **¿Cuántos pedidos hay en cada estado? Ordena el resultado de forma**
-  **descendente por el número de pedidos.**
+    **descendente por el número de pedidos.**
 
   ```sql
   SELECT estado, COUNT(*) AS total_pedidos
@@ -1240,10 +1240,10 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   +-----------+---------------+
   | estado	| total_pedidos |
   +-----------+---------------+
-  | Rechazado |         	4 |
-  | Entregado |         	3 |
-  | Pendiente |         	2 |
-  | Retrasado |         	1 |
+  | Rechazado |         	4   |
+  | Entregado |         	3   |
+  | Pendiente |         	2   |
+  | Retrasado |         	1   |
   +-----------+---------------+
   
   ```
@@ -1251,7 +1251,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   
 
 5. **Calcula el precio de venta del producto más caro y más barato en una**
-  **misma consulta.**
+    **misma consulta.**
 
   ```sql
   SELECT MAX(precio_venta) AS precio_mas_caro, MIN(precio_venta) AS precio_mas_barato
@@ -1260,7 +1260,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   +-----------------+-------------------+
   | precio_mas_caro | precio_mas_barato |
   +-----------------+-------------------+
-  |      	110.50 |         	20.50 |
+  |      	110.50    |         	20.50 |
   +-----------------+-------------------+
   
   ```
@@ -1302,7 +1302,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
    
 
 8. **¿Calcula cuántos clientes tiene cada una de las ciudades que empiezan**
-  **por M?**
+    **por M?**
 
   ```sql
   SELECT LEFT(ci.nombre, 1) AS primera_letra_ciudad, COUNT(*) AS total_clientes
@@ -1314,7 +1314,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   +----------------------+----------------+
   | primera_letra_ciudad | total_clientes |
   +----------------------+----------------+
-  | M                	|          	4 |
+  | M                	   |          	4   |
   +----------------------+----------------+
   
   ```
@@ -1333,9 +1333,9 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   --------+-----------------+--------------------+
   | nombre | apellidos   	| clientes_atendidos |
   +--------+-----------------+--------------------+
-  | María  | López Sánchez   |              	1 |
-  | Laura  | Pérez Díaz  	|              	1 |
-  | Javier | Díaz Ruiz   	|              	1 |
+  | María  | López Sánchez|              	1    |
+  | Laura  | Pérez Díaz  	|              	1    |
+  | Javier | Díaz Ruiz   	|              	1    |
   +--------+-----------------+--------------------+
   
   ```
@@ -1883,17 +1883,53 @@ Con operadores básicos de comparación
    **hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.**
 
    ```sql
-   c
-   ```
-
+   SELECT *
+   FROM oficina
+   WHERE codigo NOT IN (
+   	SELECT DISTINCT codigo_oficina
+   	FROM empleado
+   	WHERE cedula IN (
+       	SELECT DISTINCT cedula_empleado
+       	FROM cliente JOIN pedido ON cliente.cedula=pedido.cedula_cliente 
+   	JOIN detalle_pedido dp ON pedido.codigo=dp.codigo_pedido 
+   	JOIN producto p ON p.codigo=dp.codigo_producto 
+   	JOIN gama_producto gp ON p.id_gama=gp.id
+       	WHERE cedula_empleado IS NOT NULL AND gp.descripcion_texto= 'Frutales'
+   	)
+   );
    
-
+   +--------+---------------+--------------------+------------------+---------------+
+   | codigo | codigo_postal | linea_direccion1   | linea_direccion2 | codigo_ciudad |
+   +--------+---------------+--------------------+------------------+---------------+
+   |  	2 | 28002     	| Fuenlabrada    	| Piso 2       	|         	1 |
+   |  	3 | 75001     	| Rue Principale 1   | Étage 1      	|         	3 |
+   |  	4 | 75002     	| Fuenlabrada    	| Étage 2      	|         	3 |
+   |  	5 | 00100     	| Via Principale 1   | Piano 1      	|         	5 |
+   |  	6 | 00101     	| Corso Secondario 2 | Piano 2      	|         	5 |
+   |  	7 | 10001     	| Fuenlabrada    	| Stockwerk 1  	|         	7 |
+   |  	8 | 10002     	| Nebenstraße 2  	| Stockwerk 2  	|         	7 |
+   |  	9 | E1 7AD    	| High Street 1  	| Floor 1      	|         	9 |
+   | 	10 | L1 1AA    	| Water Street 2 	| Floor 2      	|        	10 |
+   +--------+---------------+--------------------+------------------+---------------+
+   
+   ```
+   
+   
+   
 7. **Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.**
 
    ```sql
-   c
+   SELECT nombre
+   FROM cliente
+   WHERE cedula IN (
+   	SELECT DISTINCT cedula_cliente
+   	FROM pedido
+   ) AND cedula NOT IN (
+   	SELECT DISTINCT cedula_cliente
+   	FROM pago
+   );
    ```
-
+   
    
 
 #### Subconsultas con EXISTS y NOT EXISTS
@@ -1902,15 +1938,43 @@ Con operadores básicos de comparación
     **realizado ningún pago.**
 
     ```sql
-    c
+    SELECT nombre
+    FROM cliente c
+    WHERE NOT EXISTS (
+    	SELECT *
+    	FROM pago p
+    	WHERE p.cedula_cliente = c.cedula
+    );
     ```
-
     
-
+    
+    
 19. **Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.**
 
     ```sql
-    c
+    SELECT nombre
+    FROM cliente c
+    WHERE EXISTS (
+    	SELECT *
+    	FROM pago p
+    	WHERE p.cedula_cliente = c.cedula
+    );
+    
+    +---------+
+    | nombre  |
+    +---------+
+    | Luis	|
+    | Isabel  |
+    | Miguel  |
+    | Elena   |
+    | Daniel  |
+    | Carmen  |
+    | Pablo   |
+    | Lucía   |
+    | Ricardo |
+    | Sofía   |
+    +---------+
+    
     ```
 
     
@@ -1919,18 +1983,47 @@ Con operadores básicos de comparación
     **pedido.**
 
     ```sql
-    c
-    ```
-
+    SELECT nombre
+    FROM producto p
+    WHERE NOT EXISTS (
+    	SELECT *
+    	FROM detalle_pedido dp
+    	WHERE dp.codigo_producto = p.codigo
+    );
     
-
+    ```
+    
+    
+    
 21. **Devuelve un listado de los productos que han aparecido en un pedido**
     **alguna vez.**
 
     ```sql
-    c
+    SELECT nombre
+    FROM producto p
+    WHERE EXISTS (
+    	SELECT *
+    	FROM detalle_pedido dp
+    	WHERE dp.codigo_producto = p.codigo
+    );
+    
+    +-------------+
+    | nombre  	|
+    +-------------+
+    | Producto 1  |
+    | Producto 2  |
+    | Producto 3  |
+    | Producto 4  |
+    | Producto 5  |
+    | Producto 6  |
+    | Producto 7  |
+    | Producto 8  |
+    | Producto 9  |
+    | Producto 10 |
+    +-------------+
+    
     ```
-
+    
     
 
 
@@ -1941,52 +2034,123 @@ Con operadores básicos de comparación
    **pedidos ha realizado. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.**
 
    ```sql
-   c
-   ```
-
+   SELECT c.nombre AS nombre_cliente, COUNT(p.codigo) AS total_pedidos
+   FROM cliente c
+   LEFT JOIN pedido p ON c.cedula = p.cedula_cliente
+   GROUP BY c.nombre;
+   +----------------+---------------+
+   | nombre_cliente | total_pedidos |
+   +----------------+---------------+
+   | Luis       	|         	1 |
+   | Isabel     	|         	1 |
+   | Miguel     	|         	1 |
+   | Elena      	|         	1 |
+   | Daniel     	|         	1 |
+   | Carmen     	|         	1 |
+   | Pablo      	|         	1 |
+   | Lucía      	|         	1 |
+   | Ricardo    	|         	1 |
+   | Sofía      	|         	1 |
+   +----------------+---------------+
    
-
+   ```
+   
+   
+   
 2. **Devuelve un listado con los nombres de los clientes y el total pagado por**
    **cada uno de ellos. Tenga en cuenta que pueden existir clientes que no han realizado ningún pago.**
 
    ```sql
-   c
-   ```
-
+   SELECT c.nombre AS nombre_cliente, COALESCE(SUM(pa.total), 0) AS total_pagado
+   FROM cliente c
+   LEFT JOIN pago pa ON c.cedula = pa.cedula_cliente
+   GROUP BY c.nombre;
+   +----------------+--------------+
+   | nombre_cliente | total_pagado |
+   +----------------+--------------+
+   | Luis       	|   	200.00 |
+   | Isabel     	|   	300.00 |
+   | Miguel     	|   	400.00 |
+   | Elena      	|   	500.00 |
+   | Daniel     	|   	600.00 |
+   | Carmen     	|   	700.00 |
+   | Pablo      	|   	800.00 |
+   | Lucía      	|   	900.00 |
+   | Ricardo    	|  	1000.00 |
+   | Sofía      	|  	1100.00 |
+   +----------------+--------------+
    
-
+   ```
+   
+   
+   
 3. **Devuelve el nombre de los clientes que hayan hecho pedidos en 2008**
    **ordenados alfabéticamente de menor a mayor.**
 
    ```sql
-   c
-   ```
-
+   SELECT DISTINCT c.nombre AS nombre_cliente
+   FROM cliente c
+   INNER JOIN pedido p ON c.cedula = p.cedula_cliente
+   WHERE YEAR(p.fecha_pedido) = 2008
+   ORDER BY c.nombre;
    
-
+   ```
+   
+   
+   
 4. **Devuelve el nombre del cliente, el nombre y primer apellido de su**
    **representante de ventas y el número de teléfono de la oficina del**
    **representante de ventas, de aquellos clientes que no hayan realizado ningún pago.**
 
    ```sql
-   c
-   ```
-
+   SELECT c.nombre AS nombre_cliente, e.nombre AS nombre_representante, e.apellido1 AS apellido_representante, t.numero AS telefono_oficina
+   FROM cliente c
+   LEFT JOIN empleado e ON c.cedula_empleado = e.cedula
+   LEFT JOIN telefono t ON e.codigo_oficina = t.codigo_oficina
+   LEFT JOIN pago p ON c.cedula = p.cedula_cliente
+   WHERE p.id IS NULL;
    
-
+   ```
+   
+   
+   
 5. **Devuelve el listado de clientes donde aparezca el nombre del cliente, el**
    **nombre y primer apellido de su representante de ventas y la ciudad donde está su oficina.**
 
    ```sql
-   c
-   ```
-
+   SELECT c.nombre AS nombre_cliente, e.nombre AS nombre_representante, e.apellido1 AS apellido_representante, ci.nombre AS ciudad_oficina
+   FROM cliente c
+   LEFT JOIN empleado e ON c.cedula_empleado = e.cedula
+   LEFT JOIN oficina o ON e.codigo_oficina = o.codigo
+   LEFT JOIN ciudad ci ON o.codigo_ciudad = ci.codigo;
    
-
+   
+   +----------------+----------------------+------------------------+----------------+
+   | nombre_cliente | nombre_representante | apellido_representante | ciudad_oficina |
+   +----------------+----------------------+------------------------+----------------+
+   | Luis       	| Juan             	| González           	| Madrid     	|
+   | Isabel     	| María            	| López              	| Madrid     	|
+   | Miguel     	| Carlos           	| Rodríguez          	| Madrid     	|
+   | Elena      	| Laura            	| Pérez              	| Madrid     	|
+   | Daniel     	| Ana              	| Hernández          	| París      	|
+   | Carmen     	| David            	| Martínez           	| París      	|
+   | Pablo      	| Sara             	| Gómez              	| París      	|
+   | Lucía      	| Javier           	| Díaz               	| París      	|
+   | Ricardo    	| Elena            	| Vidal              	| Roma       	|
+   | Sofía      	| Pedro            	| Fernández          	| Roma       	|
+   +----------------+----------------------+------------------------+----------------+
+   
+   ```
+   
+   
+   
 6. **Devuelve el nombre, apellidos, puesto y teléfono de la oficina de aquellos empleados que no sean representante de ventas de ningún cliente.**
 
    ```sql
-   c
+   SELECT e.nombre, e.apellido1, e.apellido2, e.puesto, t.numero AS telefono_oficina
+   FROM empleado e
+   LEFT JOIN telefono t ON e.codigo_oficina = t.codigo_oficina
+   WHERE e.cedula NOT IN (SELECT DISTINCT cedula_empleado FROM cliente);
    ```
 
    
@@ -1995,7 +2159,26 @@ Con operadores básicos de comparación
    **número de empleados que tiene.**
 
    ```sql
-   c
+   SELECT ci.nombre AS nombre_ciudad, COUNT(e.cedula) AS numero_empleados
+   FROM ciudad ci
+   LEFT JOIN oficina o ON ci.codigo = o.codigo_ciudad
+   LEFT JOIN empleado e ON o.codigo = e.codigo_oficina
+   GROUP BY ci.nombre;
+   +---------------+------------------+
+   | nombre_ciudad | numero_empleados |
+   +---------------+------------------+
+   | Madrid    	|            	4 |
+   | Barcelona 	|            	0 |
+   | París     	|            	4 |
+   | Marsella  	|            	0 |
+   | Roma      	|            	4 |
+   | Milán     	|            	0 |
+   | Berlín    	|            	0 |
+   | Hamburgo  	|            	0 |
+   | Londres   	|            	0 |
+   | Liverpool 	|            	0 |
+   +---------------+------------------+
+   
    ```
-
+   
    
