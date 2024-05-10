@@ -178,7 +178,6 @@ CREATE TABLE telefono(
 **Inserción de datos**
 
 ~~~sql
-1. Tabla pais
 
 INSERT INTO pais (nombre) VALUES
 ('España'),
@@ -192,7 +191,6 @@ INSERT INTO pais (nombre) VALUES
 ('Bélgica'),
 ('Suecia');
 
-2. Tabla region
 INSERT INTO region (nombre, codigo_pais) VALUES
 ('Madrid', 1),
 ('Barcelona', 1),
@@ -204,9 +202,8 @@ INSERT INTO region (nombre, codigo_pais) VALUES
 ('Hamburgo', 4),
 ('Londres', 5),
 ('Liverpool', 5);
-```
 
-3. Tabla ciudad
+
 INSERT INTO ciudad (nombre, codigo_region) VALUES
 ('Madrid', 1),
 ('Barcelona', 2),
@@ -218,9 +215,7 @@ INSERT INTO ciudad (nombre, codigo_region) VALUES
 ('Hamburgo', 8),
 ('Londres', 9),
 ('Liverpool', 10);
-```
 
-4. Tabla tipo_telefono
 
 INSERT INTO tipo_telefono (descripcion) VALUES
 ('Móvil'),
@@ -229,7 +224,6 @@ INSERT INTO tipo_telefono (descripcion) VALUES
 ('Satélite'),
 ('IP');
 
-5. Tabla `tipo_pago
 INSERT INTO tipo_pago (descripcion) VALUES
 ('PayPal'),
 ('Transferencia'),
@@ -237,8 +231,6 @@ INSERT INTO tipo_pago (descripcion) VALUES
 ('Cheque'),
 ('Efectivo');
 
-
-6. Tabla proveedor
 
 INSERT INTO proveedor (nit, nombre) VALUES
 ('123456789', 'Proveedor A'),
@@ -252,8 +244,6 @@ INSERT INTO proveedor (nit, nombre) VALUES
 ('777777777', 'Proveedor I'),
 ('888888888', 'Proveedor J');
 
-7. Tabla sucursal
-
 INSERT INTO sucursal (direccion, codigo_ciudad, nit_proveedor) VALUES
 ('Calle 123', 1, '123456789'),
 ('Calle 456', 2, '123456789'),
@@ -266,7 +256,6 @@ INSERT INTO sucursal (direccion, codigo_ciudad, nit_proveedor) VALUES
 ('Calle 345', 9, '333333333'),
 ('Avenida 678', 10, '333333333');
 
-8. Tabla gama_producto
 INSERT INTO gama_producto (descripcion_texto, descripcion_html, imagen) VALUES
 ('Ornamentales', 'Descripción de Ornamentales', 'imagen1.jpg'),
 ('Frutales', 'Descripción de Frutales', 'imagen2.jpg'),
@@ -279,8 +268,6 @@ INSERT INTO gama_producto (descripcion_texto, descripcion_html, imagen) VALUES
 ('Deportes', 'Descripción de Deportes', 'imagen9.jpg'),
 ('Joyería', 'Descripción de Joyería', 'imagen10.jpg');
 
-
-9. Tabla dimension
 
 INSERT INTO dimension (altura, anchura, profundidad) VALUES
 ('10 cm', '5 cm', '2 cm'),
@@ -295,8 +282,6 @@ INSERT INTO dimension (altura, anchura, profundidad) VALUES
 ('100 cm', '50 cm', '25 cm');
 
 
-10. Tabla producto
-
 INSERT INTO producto (nombre, descripcion, precio_venta, id_gama, id_dimension, nit_proveedor) VALUES
 ('Producto 1', 'Descripción de Producto', 20.50, 1, 1, '123456789'),
 ('Producto 2', 'Descripción de Producto', 30.75, 2, 2, '987654321'),
@@ -310,9 +295,6 @@ INSERT INTO producto (nombre, descripcion, precio_venta, id_gama, id_dimension, 
 ('Producto 10', 'Descripción de Producto', 110.50, 10, 10, '888888888');
 
 
-
-11. Tabla oficina
-
 INSERT INTO oficina (codigo_postal, linea_direccion1, linea_direccion2, codigo_ciudad) VALUES
 ('28001', 'Calle Mayor 1', 'Piso 1', 1),
 ('28002', 'Fuenlabrada', 'Piso 2', 1), -- Aquí faltaba una comilla después de Fuenlabrada
@@ -324,9 +306,6 @@ INSERT INTO oficina (codigo_postal, linea_direccion1, linea_direccion2, codigo_c
 ('10002', 'Nebenstraße 2', 'Stockwerk 2', 7),
 ('E1 7AD', 'High Street 1', 'Floor 1', 9),
 ('L1 1AA', 'Water Street 2', 'Floor 2', 10);
-
-
-12. Tabla inventario
 
 INSERT INTO inventario (stock_min, stock_max, stock, codigo_producto) VALUES
 (10, 50, 30, 11),
@@ -340,8 +319,6 @@ INSERT INTO inventario (stock_min, stock_max, stock, codigo_producto) VALUES
 (90, 450, 270, 19),
 (100, 500, 300, 20);
 
-
-13. Tabla `empleado`
 
 INSERT INTO empleado (cedula, nombre, apellido1, apellido2, extension, puesto, codigo_oficina, jefe, email) VALUES
 (1, 'Juan', 'González', 'Martínez', '123', 'Gerente', 1, NULL, 'juan.gonzalez@example.com'),
@@ -358,8 +335,6 @@ INSERT INTO empleado (cedula, nombre, apellido1, apellido2, extension, puesto, c
 (12, 'Angeli', 'Corredor', 'González', '171', 'Reclutador', 5, 3, 'angeli.corredor@example.com');
 
 
-14. Tabla cliente
-
 INSERT INTO cliente (cedula, nombre, linea_direccion1, linea_direccion2, codigo_postal, limite_credito, cedula_empleado, codigo_ciudad) VALUES
 (1, 'Luis', 'Calle Principal 1', 'Piso 1', '28001', 500.00, 1, 1),
 (2, 'Isabel', 'Avenida Central 2', 'Piso 2', '28002', 1000.00, 2, 1),
@@ -371,9 +346,6 @@ INSERT INTO cliente (cedula, nombre, linea_direccion1, linea_direccion2, codigo_
 (8, 'Lucía', 'Avenida Central 3', 'Piso 3', '28002', 1200.00, 8, 1),
 (9, 'Ricardo', 'Boulevard Central 2', 'Étage 2', '75002', 650.00, 9, 3),
 (10, 'Sofía', 'Corso Secondario 2', 'Piano 2', '00101', 850.00, 10, 5);
-
-
-15. Tabla pedido
 
 INSERT INTO pedido (fecha_pedido, fecha_esperada, fecha_entrega, estado, cedula_cliente, comentarios) VALUES
 ('2024-04-01', '2020-04-15', '2024-04-20', 'Entregado', 1, 'Entrega realizada a tiempo'),
@@ -387,9 +359,6 @@ INSERT INTO pedido (fecha_pedido, fecha_esperada, fecha_entrega, estado, cedula_
 ('2024-04-09', '2009-04-23', NULL, 'Rechazado', 9, 'Pedido en espera de confirmación de inventario'),
 ('2024-04-10', '2024-04-24', NULL, 'Pendiente', 10, 'Pedido en espera de confirmación de inventario');
 
-```
-
-16. Tabla detalle_pedido
 
 INSERT INTO detalle_pedido (cantidad, precio_unidad, codigo_producto, codigo_pedido) VALUES
 (5, 20.50, 11, 11),
@@ -404,7 +373,6 @@ INSERT INTO detalle_pedido (cantidad, precio_unidad, codigo_producto, codigo_ped
 (50, 110.50, 20, 20);
 
 
-17. Tabla pago
 INSERT INTO pago (total, fecha, cedula_cliente, id_tipo_pago) VALUES
 (200.00, '2024-04-01', 1, 1),
 (300.00, '2023-04-02', 2, 2),
@@ -417,7 +385,7 @@ INSERT INTO pago (total, fecha, cedula_cliente, id_tipo_pago) VALUES
 (1000.00, '2009-04-09', 9, 4),
 (1100.00, '2022-04-10', 10, 5);
 
-18. Tabla contacto
+
 INSERT INTO contacto (nombre, apellido, email, cedula_cliente, nit_proveedor) VALUES
 ('Juan', 'Pérez', 'juan.perez@example.com', 1, NULL),
 ('María', 'López', 'maria.lopez@example.com', 2, NULL),
@@ -425,7 +393,6 @@ INSERT INTO contacto (nombre, apellido, email, cedula_cliente, nit_proveedor) VA
 ('Ana', 'Martínez', 'ana.martinez@example.com', NULL, '987654321');
 
 
-19. Tabla telefono
 INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_oficina, id_tipo_telefono) VALUES
 (123456789, '+34', 1, NULL, NULL, 1),
 (234567890, '+34', 2, NULL, NULL, 2),
@@ -438,6 +405,52 @@ INSERT INTO telefono (numero, prefijo, cedula_cliente, nit_proveedor, codigo_ofi
 (901234567, '+34', NULL, NULL, 4, 4),
 (123456789, '+44', NULL, NULL, 5, 5);
 
+INSERT INTO cliente (cedula, nombre, linea_direccion1, linea_direccion2, codigo_postal, limite_credito, cedula_empleado, codigo_ciudad) VALUES
+(11, 'Julia', 'Calle Principal 3', 'Piso 3', '28003', 700.00, 4, 1),
+(12, 'Antonio', 'Avenida Central 4', 'Piso 4', '28004', 1200.00, 5, 1);
+
+INSERT INTO pedido (fecha_pedido, fecha_esperada, fecha_entrega, estado, cedula_cliente, comentarios) VALUES
+('2024-04-11', '2024-04-25', NULL, 'Pendiente', 11, 'Pedido en proceso'),
+('2024-04-12', '2024-04-26', NULL, 'Pendiente', 12, 'Pedido en proceso');
+
+INSERT INTO detalle_pedido (cantidad, precio_unidad, codigo_producto, codigo_pedido) VALUES
+(5, 20.50, 11, 21),
+(10, 30.75, 12, 22);
+
+INSERT INTO pago (total, fecha, cedula_cliente, id_tipo_pago) VALUES
+(200.00, '2024-04-13', 11, 1),
+(300.00, '2024-04-14', 12, 2);
+
+INSERT INTO empleado (cedula, nombre, apellido1, apellido2, extension, puesto, codigo_oficina, jefe, email) VALUES
+(13, 'Alberto', 'Soria', 'González', '123', 'Gerente', 1, NULL, 'alberto.soria@example.com'),
+(14, 'Sandra', 'Martínez', 'López', '456', 'representante de ventas', 1, 13, 'sandra.martinez@example.com');
+
+INSERT INTO cliente (cedula, nombre, linea_direccion1, linea_direccion2, codigo_postal, limite_credito, cedula_empleado, codigo_ciudad) VALUES
+(13, 'Roberto', 'Calle Principal 4', 'Piso 4', '28004', 700.00, 13, 1);
+
+
+INSERT INTO pedido (fecha_pedido, fecha_esperada, fecha_entrega, estado, cedula_cliente, comentarios) VALUES
+('2024-04-15', '2024-04-29', NULL, 'Pendiente', 13, 'Pedido en proceso');
+
+
+INSERT INTO detalle_pedido (cantidad, precio_unidad, codigo_producto, codigo_pedido) VALUES
+(5, 20.50, 11, 23);
+
+
+INSERT INTO pago (total, fecha, cedula_cliente, id_tipo_pago) VALUES
+(400.00, '2024-04-16', 13, 3);
+INSERT INTO empleado (cedula, nombre, apellido1, apellido2, email, puesto, jefe, codigo_oficina, extension)
+VALUES
+(101, 'Luisa', 'González', 'Pérez', 'luisa@example.com', 'Gerente', NULL, 1, '101'),
+(102, 'Andrés', 'Rodríguez', 'López', 'andres@example.com', 'Vendedor', 101, 1, '102'),
+(103, 'Ana', 'Martínez', 'Sánchez', 'ana@example.com', 'Vendedor', 101, 1, '103');
+
+
+INSERT INTO cliente (cedula, nombre, linea_direccion1, linea_direccion2, codigo_postal, limite_credito, cedula_empleado, codigo_ciudad)
+VALUES
+(1001, 'Carlos', 'Calle Principal', 'Número 123', '28001', 1000.00, 101, 1),
+(1002, 'Laura', 'Avenida Central', 'Piso 5', '08001', 1500.00, 102, 2),
+(1003, 'Antonio', 'Plaza Mayor', 'Apartamento 3B', '28002', 800.00, 103, 1);
 ~~~
 
 #### **Consultas sobre una tabla**
@@ -863,6 +876,14 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
   SELECT cliente.nombre, empleado.nombre, empleado.apellido1
   FROM cliente, empleado
   WHERE cliente.cedula_empleado = empleado.cedula AND cliente.cedula NOT IN (SELECT cedula_cliente FROM pago);
+  
+  +---------+---------+------------+
+  | nombre  | nombre  | apellido1  |
+  +---------+---------+------------+
+  | Carlos  | Luisa   | González   |
+  | Laura   | Andrés  | Rodríguez  |
+  | Antonio | Ana 	| Martínez   |
+  +---------+---------+------------+
   ```
 
   
@@ -899,6 +920,15 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
   SELECT cliente.nombre, empleado.nombre, empleado.apellido1, ciudad.nombre
   FROM cliente, empleado, oficina, ciudad
   WHERE cliente.cedula_empleado = empleado.cedula AND empleado.codigo_oficina = oficina.codigo AND oficina.codigo_ciudad = ciudad.codigo AND cliente.cedula NOT IN (SELECT cedula_cliente FROM pago);
+  
+  +---------+---------+------------+--------+
+  | nombre  | nombre  | apellido1  | nombre |
+  +---------+---------+------------+--------+
+  | Carlos  | Luisa   | González   | Madrid |
+  | Laura   | Andrés  | Rodríguez  | Madrid |
+  | Antonio | Ana 	| Martínez   | Madrid |
+  +---------+---------+------------+--------+
+  
   ```
 
   
@@ -933,11 +963,11 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
   +---------+--------+------------+--------+
   | nombre  | nombre | apellido1  | nombre |
   +---------+--------+------------+--------+
-  | Luis	| Juan   | González   | Madrid |
+  | Luis	  | Juan   | González   | Madrid |
   | Isabel  | María  | López  	| Madrid |
   | Miguel  | Carlos | Rodríguez  | Madrid |
   | Elena   | Laura  | Pérez  	| Madrid |
-  | Daniel  | Ana	| Hernández  | París  |
+  | Daniel  | Ana	   | Hernández  | París  |
   | Carmen  | David  | Martínez   | París  |
   | Pablo   | Sara   | Gómez  	| París  |
   | Lucía   | Javier | Díaz   	| París  |
@@ -952,7 +982,32 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
 8. **Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.**
 
   ```sql
-  c
+  SELECT e.nombre AS empleado, j.nombre AS jefe
+  FROM empleado e
+  LEFT JOIN empleado j ON e.jefe = j.cedula;
+  
+  +----------+---------+
+  | empleado | jefe	|
+  +----------+---------+
+  | Juan 	   | NULL	|
+  | María	   | Juan	|
+  | Carlos   | Juan	|
+  | Laura	   | Carlos |
+  | Ana  	   | Juan	|
+  | David	   | Juan	|
+  | Sara 	   | María  |
+  | Javier   | María  |
+  | Elena	   | Carlos |
+  | Pedro	   | Carlos |
+  | Rosa 	   | Carlos |
+  | Angeli   | Carlos |
+  | Alberto  | NULL	|
+  | Sandra   | Alberto|
+  | Luisa	   | NULL	|
+  | Andrés   | Luisa  |
+  | Ana  	   | Luisa  |
+  +----------+---------+
+  
   ```
 
   
@@ -960,7 +1015,33 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
 9. **Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.**
 
   ```sql
-  c
+  SELECT e.nombre AS empleado, j.nombre AS jefe, jj.nombre AS jefe_del_jefe
+  FROM empleado e
+  LEFT JOIN empleado j ON e.jefe = j.cedula
+  LEFT JOIN empleado jj ON j.jefe = jj.cedula;
+  
+  +----------+---------+---------------+
+  | empleado | jefe    | jefe_del_jefe |
+  +----------+---------+---------------+
+  | Juan     | NULL    | NULL          |
+  | María    | Juan    | NULL          |
+  | Carlos   | Juan    | NULL          |
+  | Laura    | Carlos  | Juan          |
+  | Ana      | Juan    | NULL          |
+  | David    | Juan    | NULL          |
+  | Sara     | María   | Juan          |
+  | Javier   | María   | Juan          |
+  | Elena    | Carlos  | Juan          |
+  | Pedro    | Carlos  | Juan          |
+  | Rosa     | Carlos  | Juan          |
+  | Angeli   | Carlos  | Juan          |
+  | Alberto  | NULL    | NULL          |
+  | Sandra   | Alberto | NULL          |
+  | Luisa    | NULL    | NULL          |
+  | Andrés   | Luisa   | NULL          |
+  | Ana      | Luisa   | NULL          |
+  +----------+---------+---------------+
+  
   ```
 
   
@@ -969,17 +1050,52 @@ Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2. Las consulta
     **tiempo un pedido.**
 
     ```sql
-    c
-    ```
-
+    SELECT cliente.nombre
+    FROM cliente
+    INNER JOIN pedido ON cliente.cedula = pedido.cedula_cliente
+    WHERE pedido.estado != 'Entregado' AND pedido.fecha_entrega IS NOT NULL AND pedido.fecha_esperada < pedido.fecha_entrega;
     
-
+    +--------+
+    | nombre |
+    +--------+
+    | Isabel |
+    +--------+
+    
+    ```
+    
+    
+    
 11. **Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.**
 
     ```sql
-    c
+    SELECT cliente.nombre AS nombre_cliente, GROUP_CONCAT(DISTINCT gama_producto.descripcion_texto) AS gamas_compradas
+    FROM cliente
+    INNER JOIN pedido ON cliente.cedula = pedido.cedula_cliente
+    INNER JOIN detalle_pedido ON pedido.codigo = detalle_pedido.codigo_pedido
+    INNER JOIN producto ON detalle_pedido.codigo_producto = producto.codigo
+    INNER JOIN gama_producto ON producto.id_gama = gama_producto.id
+    GROUP BY cliente.nombre;
+    
+    +----------------+-----------------+
+    | nombre_cliente | gamas_compradas |
+    +----------------+-----------------+
+    | Antonio    	| Frutales    	   |
+    | Carmen     	| Ropa        	   |
+    | Daniel     	| Muebles     	   |
+    | Elena      	| Electrónicos	   |
+    | Isabel     	| Frutales    	   |
+    | Julia      	| Ornamentales	   |
+    | Lucía      	| Herramientas	   |
+    | Luis       	| Ornamentales	   |
+    | Miguel     	| Juguetes    	   |
+    | Pablo      	| Libros           |
+    | Ricardo    	| Deportes    	   |
+    | Roberto    	| Ornamentales	   | 
+    | Sofía      	| Joyería     	   |
+    +----------------+-----------------+
+    
     ```
-
+    
     
 
 #### Consultas multitabla (Composición externa)
@@ -994,6 +1110,15 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   FROM cliente
   LEFT JOIN pago ON cliente.cedula = pago.cedula_cliente
   WHERE pago.cedula_cliente IS NULL;
+  
+  +---------+
+  | nombre  |
+  +---------+
+  | Carlos  |
+  | Laura   |
+  | Antonio |
+  +---------+
+  
   ```
 
   
@@ -1006,6 +1131,15 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   FROM cliente
   LEFT JOIN pedido ON cliente.cedula = pedido.cedula_cliente
   WHERE pedido.cedula_cliente IS NULL;
+  
+  +---------+
+  | nombre  |
+  +---------+
+  | Carlos  |
+  | Laura   |
+  | Antonio |
+  +---------+
+  
   ```
 
   
@@ -1018,6 +1152,15 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN, RIGHT JOIN, NA
   LEFT JOIN pago ON cliente.cedula = pago.cedula_cliente
   LEFT JOIN pedido ON cliente.cedula = pedido.cedula_cliente
   WHERE pago.cedula_cliente IS NULL AND pedido.cedula_cliente IS NULL;
+  
+  +---------+
+  | nombre  |
+  +---------+
+  | Carlos  |
+  | Laura   |
+  | Antonio |
+  +---------+
+  
   ```
 
   
@@ -2183,3 +2326,256 @@ Con operadores básicos de comparación
    ```
    
    
+
+#### PROCEDIMIENTOS
+
+1. **Crear empleado:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE CrearEmpleado(
+    IN p_nombre VARCHAR(100),
+    IN p_apellido VARCHAR(100),
+    IN p_puesto VARCHAR(100),
+    IN p_codigo_oficina INT,
+    IN p_jefe INT
+)
+BEGIN
+    INSERT INTO empleado (nombre, apellido, puesto, codigo_oficina, jefe) 
+    VALUES (p_nombre, p_apellido, p_puesto, p_codigo_oficina, p_jefe);
+END //
+DELIMITER ;
+```
+
+2. **Actualizar empleado:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE ActualizarEmpleado(
+    IN p_id INT,
+    IN p_nombre VARCHAR(100),
+    IN p_apellido VARCHAR(100),
+    IN p_puesto VARCHAR(100),
+    IN p_codigo_oficina INT,
+    IN p_jefe INT
+)
+BEGIN
+    UPDATE empleado 
+    SET nombre = p_nombre,
+        apellido = p_apellido,
+        puesto = p_puesto,
+        codigo_oficina = p_codigo_oficina,
+        jefe = p_jefe
+    WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+3. **Eliminar empleado:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE EliminarEmpleado(
+    IN p_id INT
+)
+BEGIN
+    DELETE FROM empleado WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+4. **Buscar empleado por ID:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE BuscarEmpleadoPorID(
+    IN p_id INT
+)
+BEGIN
+    SELECT * FROM empleado WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+5. **Listar empleados:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE ListarEmpleados()
+BEGIN
+    SELECT * FROM empleado;
+END //
+DELIMITER ;
+```
+
+6. **Crear producto:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE CrearProducto(
+    IN p_nombre VARCHAR(100),
+    IN p_descripcion TEXT,
+    IN p_precio DECIMAL(10, 2),
+    IN p_id_gama INT
+)
+BEGIN
+    INSERT INTO producto (nombre, descripcion, precio, id_gama) 
+    VALUES (p_nombre, p_descripcion, p_precio, p_id_gama);
+END //
+DELIMITER ;
+```
+
+7. **Actualizar producto:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE ActualizarProducto(
+    IN p_id INT,
+    IN p_nombre VARCHAR(100),
+    IN p_descripcion TEXT,
+    IN p_precio DECIMAL(10, 2),
+    IN p_id_gama INT
+)
+BEGIN
+    UPDATE producto 
+    SET nombre = p_nombre,
+        descripcion = p_descripcion,
+        precio = p_precio,
+        id_gama = p_id_gama
+    WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+8. **Eliminar producto:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE EliminarProducto(
+    IN p_id INT
+)
+BEGIN
+    DELETE FROM producto WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+9. **Buscar producto por ID:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE BuscarProductoPorID(
+    IN p_id INT
+)
+BEGIN
+    SELECT * FROM producto WHERE id = p_id;
+END //
+DELIMITER ;
+```
+
+10. **Listar productos:**
+
+```sql
+DELIMITER //
+CREATE PROCEDURE ListarProductos()
+BEGIN
+    SELECT * FROM producto;
+END //
+DELIMITER ;
+```
+
+
+
+
+
+#### VISTAS
+
+1. **Vista de Clientes con Detalles de Pagos:**
+   ```sql
+   CREATE VIEW Vista_Clientes_Pagos AS
+   SELECT c.*, p.*
+   FROM cliente c
+   LEFT JOIN pago p ON c.cedula = p.cedula_cliente;
+   ```
+
+2. **Vista de Clientes con Detalles de Pedidos:**
+   
+   ```sql
+   CREATE VIEW Vista_Clientes_Pedidos AS
+   SELECT c.*, p.*
+   FROM cliente c
+   LEFT JOIN pedido p ON c.cedula = p.cedula_cliente;
+   ```
+   
+3. **Vista de Pedidos Pendientes:**
+
+   ```sql
+   CREATE VIEW Vista_Pedidos_Pendientes AS
+   SELECT *
+   FROM pedido
+   WHERE estado = 'Pendiente'; -- o cualquier otro estado que indique un pedido pendiente
+   ```
+
+4. **Vista de Productos sin Ventas**
+
+   ```sql
+   CREATE VIEW Vista_Productos_Sin_Ventas AS
+   SELECT p.*
+   FROM producto p
+   LEFT JOIN detalle_pedido dp ON p.codigo = dp.codigo_producto
+   WHERE dp.codigo_producto IS NULL;
+   ```
+
+5. **Vista de Gamas de Productos más Populares:**
+
+   ```sql
+   CREATE VIEW Vista_Gamas_Productos_Populares AS
+   SELECT g.*, COUNT(*) AS total_pedidos
+   FROM gama_producto g
+   INNER JOIN producto p ON g.id = p.id_gama
+   INNER JOIN detalle_pedido dp ON p.codigo = dp.codigo_producto
+   GROUP BY g.id;
+   ```
+
+6. **Vista de Clientes con Mayor Gasto:**
+   ```sql
+   CREATE VIEW Vista_Clientes_Mayor_Gasto AS
+   SELECT c.*, SUM(p.monto) AS total_gastado
+   FROM cliente c
+   LEFT JOIN pago p ON c.cedula = p.cedula_cliente
+   GROUP BY c.cedula;
+   ```
+
+7. **Vista de Detalles de Pedido con Precio Total:**
+   ```sql
+   CREATE VIEW Vista_Detalles_Pedido_Precio_Total AS
+   SELECT dp.*, (dp.cantidad * p.precio_unitario) AS precio_total
+   FROM detalle_pedido dp
+   INNER JOIN producto p ON dp.codigo_producto = p.codigo;
+   ```
+
+8. **Vista de Oficinas con Detalles de Contacto:**
+   ```sql
+   CREATE VIEW Vista_Oficinas_Contacto AS
+   SELECT o.*, t.numero AS telefono
+   FROM oficina o
+   LEFT JOIN telefono t ON o.codigo = t.codigo_oficina;
+   ```
+
+9. **Vista de Empleados con su Jefe:**
+   ```sql
+   CREATE VIEW Vista_Empleados_Con_Jefe AS
+   SELECT e.*, j.nombre AS nombre_jefe
+   FROM empleado e
+   LEFT JOIN empleado j ON e.jefe = j.cedula;
+   ```
+
+10. **Vista de Productos más Vendidos:**
+    ```sql
+    CREATE VIEW Vista_Productos_Mas_Vendidos AS
+    SELECT p.*, SUM(dp.cantidad) AS total_vendido
+    FROM producto p
+    INNER JOIN detalle_pedido dp ON p.codigo = dp.codigo_producto
+    GROUP BY p.codigo;
+    ```
+
